@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ms">
 <head>
@@ -15,8 +16,24 @@
 
         h2 {
             font-size: 6vw;
-            margin-bottom: 4vw;
+            margin-bottom: 2vw;
             text-align: center;
+        }
+
+        p.info {
+            font-size: 4vw;
+            text-align: center;
+            margin-bottom: 4vw;
+        }
+
+        .nota {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+            padding: 4vw;
+            border-radius: 10px;
+            font-size: 4vw;
+            margin-bottom: 5vw;
         }
 
         label {
@@ -66,7 +83,7 @@
                 font-size: 2em;
             }
 
-            input, button, label, .result {
+            input, button, label, .result, .nota, .info {
                 font-size: 1.2em;
             }
         }
@@ -75,6 +92,9 @@
 <body>
 
     <h2>Kiraan Nilai Huruf Arab</h2>
+    <p class="info">Masukkan nama dalam tulisan Arab untuk mengetahui jumlah nilai huruf dan tafsiran baki. Kaedah ini berdasarkan sistem nilai abjad hijaiyah.</p>
+    <div class="nota">Nota: Ini adalah kiraan berdasarkan nilai huruf Arab tradisional. Ia bukan untuk ramalan, hanya sebagai satu bentuk ikhtiar dan rujukan tambahan.</div>
+
     <label for="name">Masukkan Nama (Tulisan Arab):</label>
     <input type="text" id="name" placeholder="Contoh: احمد فاطمه" />
     <button onclick="kiraNilai()">Kira Nilai</button>
