@@ -109,16 +109,43 @@
         };
 
         const maksudBaki = {
-            1: "Tidak baik, terpandang rendah.",
-            2: "Baik.",
-            3: "Mulanya rendah, akhirnya buruk namun ada kelapangannya.",
-            4: "Baik, lagi kuat.",
-            5: "Rumah makmur.",
-            6: "Awalnya bagus, akhirnya duka-cita.",
-            7: "Rumah bagus, terpandang orang.",
-            8: "Rumah terbalik.",
-            9: "Suka berpindah-pindah."
-        };
+    1: {
+        ringkas: "Tidak baik, terpandang rendah.",
+        tafsiran: "Hubungan atau gabungan ini mungkin akan menghadapi banyak kesukaran. Sering diremehkan orang lain, kurang dihargai, atau kurang seri dalam pergaulan dan urusan. Disarankan berhati-hati dan banyak bersabar."
+    },
+    2: {
+        ringkas: "Baik.",
+        tafsiran: "Gabungan yang seimbang dan harmoni. Ada saling memahami, rezeki mudah masuk, dan hubungan cenderung stabil. Sangat sesuai untuk usaha bersama atau perkahwinan."
+    },
+    3: {
+        ringkas: "Mulanya rendah, akhirnya buruk namun ada kelapangannya.",
+        tafsiran: "Permulaan hubungan atau usaha tampak sukar dan kurang bernasib baik. Namun jika terus bersabar, akan ada sedikit ruang kelapangan, walaupun hasil akhirnya tetap tidak seperti yang diharapkan."
+    },
+    4: {
+        ringkas: "Baik, lagi kuat.",
+        tafsiran: "Ini adalah gabungan yang sangat kuat dan penuh potensi. Rezeki terbuka luas, dihormati orang, dan hubungan biasanya kukuh. Sangat baik untuk rumah tangga mahupun kerjasama."
+    },
+    5: {
+        ringkas: "Rumah makmur.",
+        tafsiran: "Tanda kebahagiaan dalam rumah tangga. Keluarga bertambah baik, anak-anak soleh, rezeki stabil, dan suasana harmoni dalam rumah. Gabungan yang sangat digalakkan."
+    },
+    6: {
+        ringkas: "Awalnya bagus, akhirnya duka-cita.",
+        tafsiran: "Nampak elok dan bahagia pada mulanya, tapi lama-lama hubungan akan diuji. Mungkin kerana pergaduhan, pengkhianatan, atau masalah dalaman yang memudaratkan emosi."
+    },
+    7: {
+        ringkas: "Rumah bagus, terpandang orang.",
+        tafsiran: "Gabungan yang elok dipandang dari luar — mungkin berprestij, terkenal, dan berjaya. Tapi mungkin juga lebih pada penampilan, bukan dalaman. Tetap baik, cuma perlu kukuhkan hubungan sebenar."
+    },
+    8: {
+        ringkas: "Rumah terbalik.",
+        tafsiran: "Hubungan ini berpotensi untuk huru-hara. Mungkin sering berlaku salah faham, krisis kewangan, atau ketidakstabilan dalam rumah tangga atau urusan perniagaan. Elakkan jika boleh."
+    },
+    9: {
+        ringkas: "Suka berpindah-pindah.",
+        tafsiran: "Gabungan ini sukar untuk kekal lama di satu tempat. Sering bertukar tempat tinggal, kerja, atau pasangan. Kurang kestabilan jangka panjang, walaupun ada pengalaman menarik sepanjangnya."
+    }
+};
 
         function kiraNilai() {
             const nama = document.getElementById('name').value.trim();
@@ -139,7 +166,8 @@ resultBox.innerHTML = `
     <strong>Jumlah Nilai:</strong> ${jumlah}<br>
     <strong>Jumlah + 7:</strong> ${jumlahTambah7}<br>
     <strong>Baki:</strong> ${baki}<br>
-    <strong>Penjelasan:</strong> ${maksudBaki[baki]}
+    <strong>Penjelasan Ringkas:</strong> ${maksudBaki[baki].ringkas}<br><br>
+    <strong>Tafsiran:</strong> ${maksudBaki[baki].tafsiran}
 `;
         }
     </script>
