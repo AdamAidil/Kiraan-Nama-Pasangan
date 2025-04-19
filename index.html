@@ -2,26 +2,73 @@
 <html lang="ms">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kiraan Nilai Huruf Arab</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            max-width: 600px;
-            margin: auto;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 5vw;
             background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
         }
+
+        h2 {
+            font-size: 6vw;
+            margin-bottom: 4vw;
+            text-align: center;
+        }
+
+        label {
+            font-size: 4.5vw;
+            display: block;
+            margin-bottom: 2vw;
+        }
+
         input, button {
-            padding: 10px;
-            font-size: 16px;
-            margin-top: 10px;
+            padding: 3vw;
+            font-size: 4.5vw;
+            margin-top: 2vw;
             width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 8px;
         }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
         .result {
-            margin-top: 20px;
-            padding: 15px;
+            margin-top: 5vw;
+            padding: 4vw;
             background: #fff;
             border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 4.5vw;
+        }
+
+        @media(min-width: 768px) {
+            body {
+                max-width: 600px;
+                margin: auto;
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            input, button, label, .result {
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
