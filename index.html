@@ -132,12 +132,15 @@
             let baki = ((jumlah + 7 - 9 - 9) % 9);
             baki = baki === 0 ? 9 : baki;
 
-            const resultBox = document.getElementById('result');
-            resultBox.innerHTML = `
-                <strong>Jumlah Nilai:</strong> ${jumlah}<br>
-                <strong>Baki:</strong> ${baki}<br>
-                <strong>Penjelasan:</strong> ${maksudBaki[baki]}
-            `;
+            const jumlahTambah7 = jumlah + 7;
+
+const resultBox = document.getElementById('result');
+resultBox.innerHTML = `
+    <strong>Jumlah Nilai:</strong> ${jumlah}<br>
+    <strong>Jumlah + 7:</strong> ${jumlahTambah7}<br>
+    <strong>Baki:</strong> ${baki}<br>
+    <strong>Penjelasan:</strong> ${maksudBaki[baki]}
+`;
         }
     </script>
 
