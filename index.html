@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiraan Nilai Huruf Arab</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+            background-color: #f4f4f4;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            width: 100%;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Kiraan Nilai Huruf Arab</h2>
+    <label for="name">Masukkan Nama (Tulisan Arab):</label>
+    <input type="text" id="name" placeholder="Contoh: احمد فاطمه" />
+    <button onclick="kiraNilai()">Kira Nilai</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        const hurufNilai = {
+            'ا': 1, 'ب': 2, 'ج': 3, 'د': 4, 'ه': 5, 'و': 6, 'ز': 7, 'ح': 8, 'ط': 9,
+            'ي': 10, 'ك': 20, 'ل': 30, 'م': 40, 'ن': 50, 'س': 60, 'ع': 70, 'ف': 80, 'ص': 90,
+            'ق': 100, 'ر': 200, 'ش': 300, 'ت': 400, 'ث': 500, 'خ': 600, 'ذ': 700,
+            'ض': 800, 'ظ': 900, 'غ': 1000
+        };
+
+        const maksudBaki = {
+            1: "Tidak baik, terpandang rendah.",
+            2: "Baik.",
+            3: "Mulanya rendah, akhirnya buruk namun ada kelapangannya.",
+            4: "Baik, lagi kuat.",
+            5: "Rumah makmur.",
+            6: "Awalnya bagus, akhirnya duka-cita.",
+            7: "Rumah bagus, terpandang orang.",
+            8: "Rumah terbalik.",
+            9: "Suka berpindah-pindah."
+        };
+
+        function kiraNilai() {
+            const nama = document.getElementById('name').value.trim();
+            let jumlah = 0;
+            for (let huruf of nama) {
+                if (hurufNilai[huruf]) {
+                    jumlah += hurufNilai[huruf];
+                }
+            }
+
+            let baki = ((jumlah + 7 - 9 - 9) % 9);
+            baki = baki === 0 ? 9 : baki;
+
+            const resultBox = document.getElementById('result');
+            resultBox.innerHTML = `
+                <strong>Jumlah Nilai:</strong> ${jumlah}<br>
+                <strong>Baki:</strong> ${baki}<br>
+                <strong>Penjelasan:</strong> ${maksudBaki[baki]}
+            `;
+        }
+    </script>
+
+</body>
+</html>
