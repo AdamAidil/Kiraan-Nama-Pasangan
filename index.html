@@ -99,13 +99,6 @@
     <button onclick="kiraNilai()">Kira Nama</button>
 
     <div class="result" id="result"></div>
-    <button onclick="muatTurunPDF()">Muat Turun Keputusan PDF</button>
-
-    <footer style="margin-top: 10vw; text-align: center; font-size: 4vw; color: #8B5E3C; border-top: 1px solid #ccc; padding-top: 3vw;">
-        © Ahmad Rifaie Al Ahmadi Idrisi
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
     <script>
         const hurufNilai = {
@@ -116,43 +109,43 @@
         };
 
         const maksudBaki = {
-            1: {
-                ringkas: "Tidak baik, terpandang rendah.",
-                tafsiran: "Hubungan atau gabungan ini mungkin akan menghadapi banyak kesukaran..."
-            },
-            2: {
-                ringkas: "Baik.",
-                tafsiran: "Gabungan yang seimbang dan harmoni..."
-            },
-            3: {
-                ringkas: "Mulanya rendah, akhirnya buruk namun ada kelapangannya.",
-                tafsiran: "Permulaan hubungan atau usaha tampak sukar..."
-            },
-            4: {
-                ringkas: "Baik, lagi kuat.",
-                tafsiran: "Ini adalah gabungan yang sangat kuat dan penuh potensi..."
-            },
-            5: {
-                ringkas: "Rumah makmur.",
-                tafsiran: "Tanda kebahagiaan dalam rumah tangga..."
-            },
-            6: {
-                ringkas: "Awalnya bagus, akhirnya duka-cita.",
-                tafsiran: "Nampak elok dan bahagia pada mulanya..."
-            },
-            7: {
-                ringkas: "Rumah bagus, terpandang orang.",
-                tafsiran: "Gabungan yang elok dipandang dari luar..."
-            },
-            8: {
-                ringkas: "Rumah terbalik.",
-                tafsiran: "Hubungan ini berpotensi untuk huru-hara..."
-            },
-            9: {
-                ringkas: "Suka berpindah-pindah.",
-                tafsiran: "Gabungan ini sukar untuk kekal lama di satu tempat..."
-            }
-        };
+    1: {
+        ringkas: "Tidak baik, terpandang rendah.",
+        tafsiran: "Hubungan atau gabungan ini mungkin akan menghadapi banyak kesukaran. Sering diremehkan orang lain, kurang dihargai, atau kurang seri dalam pergaulan dan urusan. Disarankan berhati-hati dan banyak bersabar."
+    },
+    2: {
+        ringkas: "Baik.",
+        tafsiran: "Gabungan yang seimbang dan harmoni. Ada saling memahami, rezeki mudah masuk, dan hubungan cenderung stabil. Sangat sesuai untuk usaha bersama atau perkahwinan."
+    },
+    3: {
+        ringkas: "Mulanya rendah, akhirnya buruk namun ada kelapangannya.",
+        tafsiran: "Permulaan hubungan atau usaha tampak sukar dan kurang bernasib baik. Namun jika terus bersabar, akan ada sedikit ruang kelapangan, walaupun hasil akhirnya tetap tidak seperti yang diharapkan."
+    },
+    4: {
+        ringkas: "Baik, lagi kuat.",
+        tafsiran: "Ini adalah gabungan yang sangat kuat dan penuh potensi. Rezeki terbuka luas, dihormati orang, dan hubungan biasanya kukuh. Sangat baik untuk rumah tangga mahupun kerjasama."
+    },
+    5: {
+        ringkas: "Rumah makmur.",
+        tafsiran: "Tanda kebahagiaan dalam rumah tangga. Keluarga bertambah baik, anak-anak soleh, rezeki stabil, dan suasana harmoni dalam rumah. Gabungan yang sangat digalakkan."
+    },
+    6: {
+        ringkas: "Awalnya bagus, akhirnya duka-cita.",
+        tafsiran: "Nampak elok dan bahagia pada mulanya, tapi lama-lama hubungan akan diuji. Mungkin kerana pergaduhan, pengkhianatan, atau masalah dalaman yang memudaratkan emosi."
+    },
+    7: {
+        ringkas: "Rumah bagus, terpandang orang.",
+        tafsiran: "Gabungan yang elok dipandang dari luar — mungkin berprestij, terkenal, dan berjaya. Tapi mungkin juga lebih pada penampilan, bukan dalaman. Tetap baik, cuma perlu kukuhkan hubungan sebenar."
+    },
+    8: {
+        ringkas: "Rumah terbalik.",
+        tafsiran: "Hubungan ini berpotensi untuk huru-hara. Mungkin sering berlaku salah faham, krisis kewangan, atau ketidakstabilan dalam rumah tangga atau urusan perniagaan. Elakkan jika boleh."
+    },
+    9: {
+        ringkas: "Suka berpindah-pindah.",
+        tafsiran: "Gabungan ini sukar untuk kekal lama di satu tempat. Sering bertukar tempat tinggal, kerja, atau pasangan. Kurang kestabilan jangka panjang, walaupun ada pengalaman menarik sepanjangnya."
+    }
+};
 
         function kiraNilai() {
             const nama = document.getElementById('name').value.trim();
@@ -167,26 +160,20 @@
             baki = baki === 0 ? 9 : baki;
 
             const jumlahTambah7 = jumlah + 7;
-            const resultBox = document.getElementById('result');
-            resultBox.innerHTML = `
-                <strong>Jumlah Nama + 7:</strong> ${jumlahTambah7}<br>
-                <strong>Baki:</strong> ${baki}<br>
-                <strong>Penjelasan Ringkas:</strong> ${maksudBaki[baki].ringkas}<br><br>
-                <strong>Tafsiran:</strong> ${maksudBaki[baki].tafsiran}
-            `;
-        }
 
-        function muatTurunPDF() {
-            const element = document.getElementById("result");
-            const opt = {
-                margin:       0.5,
-                filename:     'keputusan-kiraan-nama.pdf',
-                image:        { type: 'jpeg', quality: 0.98 },
-                html2canvas:  { scale: 2 },
-                jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
-            };
-            html2pdf().set(opt).from(element).save();
+const resultBox = document.getElementById('result');
+resultBox.innerHTML = `
+    <strong>Jumlah Nama + 7:</strong> ${jumlahTambah7}<br>
+    <strong>Baki:</strong> ${baki}<br>
+    <strong>Penjelasan Ringkas:</strong> ${maksudBaki[baki].ringkas}<br><br>
+    <strong>Tafsiran:</strong> ${maksudBaki[baki].tafsiran}
+`;
         }
     </script>
+
+<footer style="margin-top: 10vw; text-align: center; font-size: 4vw; color: #8B5E3C; border-top: 1px solid #ccc; padding-top: 3vw;">
+    © Ahmad Rifaie Al Ahmadi Idrisi
+</footer>
+
 </body>
 </html>
